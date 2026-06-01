@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Leonardo Landell
 
-## Getting Started
+Frontend Engineer • Product Engineer • Interactive Systems
 
-First, run the development server:
+![Portfolio Hero](./public/README/hero.jpeg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Portfolio developed to showcase projects, engineering decisions and product systems focused on scalable frontend architecture, UX engineering and interactive digital experiences.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The objective is to demonstrate not only visual interfaces, but also product thinking, technical architecture and operational workflows behind each solution.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Tech Stack](./public/README/stacks.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
 
-## Deploy on Vercel
+* React
+* Next.js
+* TypeScript
+* JavaScript
+* CSS Modules
+* Framer Motion
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Product Engineering
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Design Systems
+* UX Engineering
+* Responsive Design
+* Accessibility
+* Internationalization (i18n)
+
+### Data & Infrastructure
+
+* Supabase
+* PostgreSQL
+* REST APIs
+* Git
+* GitHub
+* Vercel
+
+---
+
+# Featured Projects
+
+## ForecastOS
+
+Operational analytics platform focused on forecasting, metrics and executive decision making.
+
+### Highlights
+
+* Analytics Engine
+* Real-Time Dashboards
+* Executive Insights
+* Enterprise UX
+* Interactive Data Visualization
+
+### Stack
+
+Next.js • TypeScript • Chart.js • Framer Motion • Supabase
+
+---
+
+## Mini CRM OS
+
+Modern CRM inspired by enterprise SaaS products, focused on operational intelligence and customer workflows.
+
+![Mini CRM OS](./public/readme/mini-crm-os.png)
+
+### Highlights
+
+* CRM Dashboard
+* Kanban Pipeline
+* Sales Flow
+* Product UX
+* SaaS Architecture
+
+### Stack
+
+Next.js • TypeScript • DND Kit • Framer Motion • Supabase
+
+---
+
+## ProjectOS
+
+Workspace focused on productivity, project management and operational systems.
+
+### Highlights
+
+* Project Management
+* Task Workflows
+* Operational Systems
+* Productivity Environment
+* Product Engineering
+
+### Stack
+
+React • Next.js • TypeScript • Zustand • Material UI
+
+---
+
+## Engineering Principles
+
+* Scalability First
+* Product-Oriented Architecture
+* Performance Focused
+* Maintainable Systems
+* User-Centered Experiences
+* Interactive Interfaces
+
+---
+
+## Contact
+
+### LinkedIn
+
+[www.linkedin.com/in/leonardo-landell](http://www.linkedin.com/in/leonardo-landell)
+
+### GitHub
+
+github.com/LeonardoLandell
+
+### Email
+
+[leonardolandell666@gmail.com](mailto:leonardolandell666@gmail.com)
+
+---
+
+Built with Next.js, TypeScript and Product Engineering principles.
