@@ -1,0 +1,734 @@
+/* =========================================
+   ENGINEERING SECTION
+========================================= */
+
+.engineeringSection {
+  position: relative;
+
+  padding-top: 180px;
+
+  padding-bottom: 180px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top, var(--primary-soft), transparent 32%),
+    var(--background);
+}
+
+/* =========================================
+   ENGINEERING LAYOUT
+========================================= */
+
+.engineeringLayout {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    520px
+    1fr;
+
+  align-items: center;
+
+  gap: 80px;
+
+  min-height: 820px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.engineeringHeader {
+  position: relative;
+
+  z-index: 10;
+
+  max-width: 520px;
+}
+
+.engineeringLabel {
+  display: inline-flex;
+
+  margin-bottom: 18px;
+
+  color: var(--primary);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+}
+
+.engineeringTitle {
+  font-size: clamp(3.2rem, 6vw, 6rem);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.08em;
+
+  color: var(--accent);
+
+  margin-bottom: 22px;
+}
+
+.engineeringDescription {
+  max-width: 520px;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   ENGINEERING CAROUSEL
+========================================= */
+
+.engineeringCarousel {
+  position: relative;
+
+  width: 100%;
+
+  height: 720px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  perspective: 2400px;
+
+  transform-style: preserve-3d;
+
+  overflow: visible;
+}
+
+/* =========================================
+   ENGINEERING CARD
+========================================= */
+
+.engineeringCard {
+  position: absolute;
+
+  width: 460px;
+
+  min-height: 580px;
+
+  border-radius: 40px;
+
+  transform-style: preserve-3d;
+
+  will-change: transform, opacity;
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s ease,
+    filter 0.55s ease;
+}
+
+/* =========================================
+   CARD STATES
+========================================= */
+
+.activeCard {
+  z-index: 20;
+
+  transform: translateX(0) scale(1);
+}
+
+.left {
+  z-index: 6;
+
+  transform: translateX(-280px) scale(0.88);
+}
+
+.right {
+  z-index: 6;
+
+  transform: translateX(280px) scale(0.88);
+}
+
+.left .cardInner,
+.right .cardInner {
+  opacity: 0.42;
+
+  filter: blur(2px) saturate(0.72);
+}
+/* =========================================
+   CARD INNER
+========================================= */
+
+.cardInner {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 42px;
+
+  border-radius: inherit;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 88%, transparent),
+    color-mix(in srgb, var(--surface) 62%, transparent)
+  );
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.18),
+    0 0 120px var(--primary-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  isolation: isolate;
+}
+
+/* =========================================
+   ACTIVE CARD
+========================================= */
+
+.activeCard .cardInner {
+  border-color: var(--primary-soft);
+
+  box-shadow:
+    0 60px 160px rgba(0, 0, 0, 0.22),
+    0 0 140px var(--glow-blue),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+   INTERNAL GRID
+========================================= */
+
+.cardInner::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+
+  opacity: 0.22;
+
+  mask-image: radial-gradient(circle at center, black, transparent 82%);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   LIGHT SWEEP
+========================================= */
+
+.cardInner::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -40%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.035),
+    transparent
+  );
+
+  transform: rotate(12deg);
+
+  animation: engineeringSweep 8s linear infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.cardTop {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 34px;
+
+  padding-bottom: 22px;
+}
+
+.cardTop::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, var(--primary-soft), transparent);
+}
+
+/* =========================================
+   LABEL
+========================================= */
+
+.cardLabel {
+  color: var(--primary);
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.cardStatus {
+  position: relative;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: var(--primary-soft);
+
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+
+  color: var(--foreground);
+
+  font-size: 0.64rem;
+
+  letter-spacing: 0.16em;
+
+  font-weight: 700;
+
+  overflow: hidden;
+}
+
+.cardStatus::before {
+  content: "";
+
+  position: absolute;
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  left: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  box-shadow: 0 0 12px var(--glow-blue);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.cardTitle {
+  position: relative;
+
+  font-size: 2.6rem;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.08em;
+
+  color: var(--foreground);
+
+  margin-bottom: 22px;
+
+  max-width: 90%;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.cardDescription {
+  color: var(--muted);
+
+  line-height: 1.9;
+
+  font-size: 0.98rem;
+
+  margin-bottom: 34px;
+
+  max-width: 92%;
+}
+
+/* =========================================
+   DOCUMENTATION
+========================================= */
+
+.documentationBlock {
+  position: relative;
+
+  padding: 26px;
+
+  border-radius: 26px;
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 88%, transparent),
+    color-mix(in srgb, var(--surface) 62%, transparent)
+  );
+
+  border: 1px solid var(--border);
+
+  margin-bottom: 34px;
+
+  overflow: hidden;
+}
+
+.documentationBlock::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 3px;
+
+  height: 100%;
+
+  background: linear-gradient(180deg, var(--primary), transparent);
+
+  box-shadow: 0 0 24px var(--glow-blue);
+}
+
+.documentationBlock p {
+  color: var(--muted);
+
+  line-height: 1.9;
+
+  font-size: 0.92rem;
+}
+
+/* =========================================
+   CONCEPTS
+========================================= */
+
+.concepts {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-bottom: 34px;
+}
+
+/* =========================================
+   CONCEPT ITEM
+========================================= */
+
+.conceptItem {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.conceptItem span {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  box-shadow: 0 0 14px var(--glow-blue);
+}
+
+.conceptItem p {
+  color: var(--muted);
+
+  font-size: 0.92rem;
+}
+
+/* =========================================
+   STACK
+========================================= */
+
+.stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+/* =========================================
+   STACK ITEM
+========================================= */
+
+.stackItem {
+  position: relative;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 84%, transparent),
+    color-mix(in srgb, var(--surface) 66%, transparent)
+  );
+
+  border: 1px solid var(--border);
+
+  color: var(--foreground);
+
+  font-size: 0.74rem;
+
+  font-weight: 600;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.carouselControls {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -110px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 22px;
+
+  z-index: 40;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.carouselButton {
+  position: relative;
+
+  z-index: 50;
+
+  width: 56px;
+
+  height: 56px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--border);
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 84%, transparent),
+    color-mix(in srgb, var(--surface) 64%, transparent)
+  );
+
+  backdrop-filter: blur(18px);
+
+  color: var(--foreground);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.4s ease;
+}
+
+.carouselButton:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--primary-soft);
+
+  box-shadow: 0 0 24px var(--glow-blue);
+}
+
+/* =========================================
+   INDICATORS
+========================================= */
+
+.carouselIndicators {
+  position: relative;
+
+  z-index: 50;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.indicator {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: color-mix(in srgb, var(--foreground) 22%, transparent);
+
+  transition: 0.35s ease;
+}
+
+.activeIndicator {
+  width: 28px;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  box-shadow: 0 0 18px var(--glow-blue);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes engineeringSweep {
+  0% {
+    transform: translateX(-40%) rotate(12deg);
+  }
+
+  100% {
+    transform: translateX(60%) rotate(12deg);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .engineeringLayout {
+    grid-template-columns: 1fr;
+
+    gap: 120px;
+  }
+
+  .engineeringHeader {
+    max-width: 100%;
+  }
+
+  .engineeringCarousel {
+    height: 760px;
+  }
+}
+
+@media (max-width: 768px) {
+  .engineeringSection {
+    padding-top: 140px;
+
+    padding-bottom: 180px;
+  }
+
+  .engineeringCard {
+    width: 92%;
+  }
+
+  .engineeringTitle {
+    font-size: 3rem;
+  }
+
+  .cardInner {
+    padding: 30px;
+  }
+}
+/* =========================================
+   CAROUSEL WRAPPER
+========================================= */
+
+.carouselWrapper {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 820px;
+}
+
+/* =========================================
+   ORBITAL GLOW
+========================================= */
+
+.orbitalGlow {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 900px;
+  height: 900px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}

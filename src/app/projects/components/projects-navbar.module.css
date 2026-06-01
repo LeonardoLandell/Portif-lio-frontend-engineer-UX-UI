@@ -1,0 +1,577 @@
+:root {
+  --project-primary: #3b82f6;
+
+  --project-soft: rgba(59, 130, 246, 0.18);
+
+  --project-glow: rgba(59, 130, 246, 0.32);
+}
+/* =========================================
+   PROJECTS NAVBAR
+========================================= */
+
+.topbar {
+  position: fixed;
+
+  top: 20px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 48px);
+
+  max-width: 1480px;
+
+  z-index: 999;
+
+  overflow: visible;
+
+  border-radius: 28px;
+
+  backdrop-filter: blur(24px);
+
+  background: rgba(8, 12, 22, 0.78);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.topbarGrid,
+.topbarGlow,
+.topbarRoute,
+.navigationGlow,
+.logoGlow {
+  pointer-events: none;
+}
+
+.topbarGrid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+
+  background-size: 24px 24px;
+
+  opacity: 0.16;
+}
+
+.topbarGlow {
+  position: absolute;
+
+  inset: -40%;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.15),
+    transparent 72%
+  );
+
+  filter: blur(120px);
+
+  opacity: 0.4;
+}
+.topbarRoute {
+  position: absolute;
+
+  top: 50%;
+
+  left: -10%;
+
+  width: 120%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--project-primary),
+    transparent
+  );
+
+  opacity: 0.25;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.topbarContainer {
+  position: relative;
+
+  z-index: 5;
+
+  height: 88px;
+
+  padding: 0 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 22px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  position: relative;
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: default;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoGlow {
+  position: absolute;
+
+  inset: -30%;
+
+  background: radial-gradient(circle, var(--project-glow), transparent 72%);
+
+  filter: blur(20px);
+}
+
+.logoNode {
+  position: absolute;
+
+  top: 8px;
+
+  right: 8px;
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--project-primary);
+
+  box-shadow:
+    0 0 12px var(--project-glow),
+    0 0 24px var(--project-glow);
+}
+
+.lOne,
+.lTwo {
+  position: relative;
+
+  z-index: 2;
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 800;
+}
+
+.lTwo {
+  opacity: 0.55;
+
+  margin-left: -2px;
+}
+
+/* =========================================
+   INFO
+========================================= */
+
+.brandInfo h3 {
+  color: white;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+}
+
+.brandInfo p {
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.76rem;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+  position: relative;
+
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 10px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navigationGlow {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.12),
+    transparent 72%
+  );
+
+  opacity: 0.15;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+.navigation a {
+  position: relative;
+
+  min-width: 130px;
+
+  height: 48px;
+
+  padding: 0 22px;
+
+  border-radius: 14px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  transition: 0.35s ease;
+}
+/* =========================================
+   ACTIVE
+========================================= */
+
+.activeLink {
+  color: white !important;
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--project-primary) 18%, transparent),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  border: 1px solid color-mix(in srgb, var(--project-primary) 35%, transparent);
+
+  box-shadow: 0 0 20px var(--project-glow);
+}
+
+.activeLink::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+
+  right: 18px;
+
+  bottom: 6px;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--project-primary),
+    transparent
+  );
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.rightActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.themeToggle,
+.languageToggle {
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+}
+
+.themeToggle:hover,
+.languageToggle:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--project-soft);
+
+  box-shadow: 0 0 18px var(--project-glow);
+}
+
+/* =========================================
+   LANGUAGE
+========================================= */
+
+.languageWrapper {
+  position: relative;
+}
+
+.languageDropdown {
+  position: absolute;
+
+  top: calc(100% + 12px);
+
+  right: 0;
+
+  width: 180px;
+
+  padding: 10px;
+
+  border-radius: 20px;
+
+  background: rgba(8, 12, 22, 0.95);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(24px);
+}
+
+.languageOption {
+  width: 100%;
+
+  height: 46px;
+
+  border: none;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  border-radius: 14px;
+
+  padding: 0 14px;
+
+  transition: 0.3s ease;
+}
+
+.languageOption:hover {
+  background: var(--project-soft);
+
+  color: white;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.topbarButton {
+  height: 52px;
+
+  padding: 0 22px;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: #050816;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.25);
+
+  transition: 0.35s ease;
+}
+.topbarButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 40px var(--project-glow);
+}
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+[data-theme="light"] .topbar {
+  background: rgba(255, 255, 255, 0.88);
+
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .brandInfo h3,
+[data-theme="light"] .lOne,
+[data-theme="light"] .lTwo,
+[data-theme="light"] .navigation a,
+[data-theme="light"] .themeToggle,
+[data-theme="light"] .languageToggle {
+  color: #111827;
+}
+
+[data-theme="light"] .brandInfo p {
+  color: rgba(17, 24, 39, 0.72);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .brandInfo {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .topbarContainer {
+    height: auto;
+
+    padding: 18px;
+
+    flex-wrap: wrap;
+  }
+
+  .navigation {
+    width: 100%;
+
+    order: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    width: calc(100% - 20px);
+
+    top: 10px;
+  }
+
+  .navigation a {
+    min-width: auto;
+
+    padding: 0 12px;
+
+    font-size: 0.82rem;
+  }
+
+  .topbarButton {
+    display: none;
+  }
+}

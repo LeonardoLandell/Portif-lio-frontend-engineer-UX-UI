@@ -1,0 +1,461 @@
+/*============
+HERO
+========================================= */
+
+.hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 72px;
+
+  align-items: center;
+}
+
+/* =========================================
+LEFT
+========================================= */
+
+.left {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+.badge {
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  color: var(--primary);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(18px);
+}
+
+.title {
+  font-size: clamp(3.4rem, 8vw, 6.8rem);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.09em;
+
+  color: var(--foreground);
+
+  text-wrap: balance;
+}
+
+.title span {
+  color: var(--primary);
+}
+
+.description {
+  max-width: 560px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.9;
+
+  color: var(--muted);
+}
+
+/* =========================================
+ACTIONS
+========================================= */
+
+.actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 8px;
+}
+
+.primaryButton,
+.secondaryButton {
+  height: 58px;
+
+  padding-inline: 28px;
+
+  border-radius: 18px;
+
+  font-weight: 700;
+
+  transition: all 0.35s ease;
+}
+
+.primaryButton {
+  background: var(--accent);
+
+  color: #111827;
+
+  box-shadow:
+    0 12px 35px rgba(250, 204, 21, 0.18),
+    0 0 20px rgba(250, 204, 21, 0.1);
+}
+
+.primaryButton:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(250, 204, 21, 0.2),
+    0 0 35px rgba(250, 204, 21, 0.16);
+}
+
+.secondaryButton {
+  background: var(--surface);
+
+  color: var(--foreground);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================================
+STACK
+========================================= */
+
+.techStack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.techItem {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.techIcon {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  color: var(--primary);
+
+  backdrop-filter: blur(18px);
+
+  font-size: 1.25rem;
+}
+
+.techItem span {
+  font-size: 0.72rem;
+
+  color: var(--muted);
+
+  font-weight: 600;
+}
+
+/* =========================================
+RIGHT
+========================================= */
+
+.right {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualWrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  max-width: 640px;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================================
+DECORATIONS
+========================================= */
+
+.heroCircle {
+  position: absolute;
+
+  width: 560px;
+  height: 560px;
+
+  border-radius: 50%;
+
+  border: 34px solid var(--primary);
+
+  opacity: 0.95;
+
+  z-index: 1;
+
+  transform: rotate(-24deg);
+
+  clip-path: polygon(0% 18%, 18% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.heroCircle::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -80px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle, var(--glow-blue), transparent 72%);
+
+  filter: blur(60px);
+}
+
+.heroSquare {
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 32px;
+
+  background: var(--accent);
+
+  opacity: 0.1;
+
+  right: 20px;
+  bottom: 40px;
+
+  z-index: 0;
+}
+
+/* =========================================
+FLOATING CARDS
+========================================= */
+
+.codeCard,
+.performanceCard,
+.wireframeCard {
+  position: absolute;
+
+  z-index: 10;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(24px);
+
+  -webkit-backdrop-filter: blur(24px);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(59, 130, 246, 0.08);
+}
+
+.cardContent {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.cardLabel {
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  color: var(--primary);
+}
+
+.codeCard {
+  top: 80px;
+
+  right: -60px;
+
+  width: 300px;
+}
+
+.codeCard pre {
+  margin: 0;
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+}
+
+.performanceCard {
+  bottom: 90px;
+
+  right: -40px;
+
+  width: 210px;
+}
+
+.performanceCard h3 {
+  margin: 0;
+
+  font-size: 2rem;
+}
+
+.performanceCard p {
+  margin: 0;
+}
+
+.wireframeCard {
+  bottom: 160px;
+
+  left: -40px;
+
+  width: 230px;
+}
+
+/* =========================================
+DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+  .content {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 600px)
+      minmax(0, 700px);
+
+    gap: 80px;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .left {
+    max-width: 600px;
+  }
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .content {
+    gap: 56px;
+  }
+
+  .heroCircle {
+    width: 460px;
+    height: 460px;
+  }
+
+  .codeCard,
+  .performanceCard,
+  .wireframeCard {
+    transform: scale(0.9);
+  }
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .heroImage {
+    max-width: 380px;
+  }
+
+  .heroCircle {
+    width: 320px;
+    height: 320px;
+
+    border-width: 20px;
+  }
+
+  .codeCard,
+  .performanceCard,
+  .wireframeCard {
+    display: none;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    flex: 1;
+  }
+}

@@ -1,0 +1,698 @@
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+  position: fixed;
+
+  top: 20px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 48px);
+
+  max-width: 1420px;
+
+  z-index: 999;
+
+  border-radius: 28px;
+
+  overflow: visible;
+
+  backdrop-filter: blur(24px);
+
+  background: var(--topbar-bg);
+
+  border: 1px solid var(--topbar-border);
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================
+   BACKGROUND SYSTEM
+========================================= */
+
+.topbarGrid,
+.topbarGlow,
+.topbarRoute,
+.navigationGlow,
+.logoGlow {
+  pointer-events: none;
+}
+
+.topbarGrid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+
+  background-size: 36px 36px;
+
+  opacity: 0.18;
+
+  mask-image: linear-gradient(180deg, black, transparent);
+}
+
+.topbarGlow {
+  position: absolute;
+
+  inset: -40%;
+
+  background: radial-gradient(
+    circle at center,
+    var(--topbar-glow),
+    transparent 72%
+  );
+
+  filter: blur(60px);
+
+  opacity: 0.8;
+}
+
+.topbarRoute {
+  position: absolute;
+
+  left: -10%;
+
+  top: 50%;
+
+  width: 120%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--topbar-active-soft),
+    transparent
+  );
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.topbarContainer {
+  position: relative;
+
+  z-index: 5;
+
+  height: 88px;
+
+  padding: 0 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 22px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  position: relative;
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  border: 1px solid var(--topbar-border);
+}
+
+.logoGlow {
+  position: absolute;
+
+  inset: -30%;
+
+  background: radial-gradient(
+    circle,
+    var(--topbar-active-soft),
+    transparent 72%
+  );
+
+  filter: blur(20px);
+}
+
+.logoNode {
+  position: absolute;
+
+  top: 8px;
+
+  right: 8px;
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--topbar-active);
+
+  box-shadow:
+    0 0 12px var(--topbar-active-glow),
+    0 0 24px var(--topbar-active-glow);
+}
+
+.lOne,
+.lTwo {
+  position: relative;
+
+  z-index: 2;
+
+  color: var(--topbar-text);
+
+  font-size: 1rem;
+
+  font-weight: 800;
+}
+
+.lTwo {
+  margin-left: -2px;
+
+  opacity: 0.55;
+}
+
+/* =========================================
+   BRAND INFO
+========================================= */
+
+.brandInfo h3 {
+  color: var(--topbar-text);
+
+  font-size: 0.96rem;
+
+  font-weight: 700;
+}
+
+.brandInfo p {
+  margin-top: 4px;
+
+  display: flex;
+
+  gap: 8px;
+
+  color: var(--topbar-subtext);
+
+  font-size: 0.76rem;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex: 1;
+
+  padding: 10px;
+
+  border-radius: 22px;
+
+  background: var(--topbar-nav-bg);
+
+  border: 1px solid var(--topbar-border);
+
+  backdrop-filter: blur(18px);
+}
+
+.navigationGlow {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle at center,
+    var(--topbar-active-soft),
+    transparent 72%
+  );
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+.navigation a {
+  position: relative;
+
+  min-width: 92px;
+
+  height: 48px;
+
+  padding: 0 20px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color: var(--topbar-subtext);
+
+  text-decoration: none;
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  border: 1px solid transparent;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  z-index: 2;
+}
+
+.navigation a:hover {
+  color: var(--topbar-text);
+
+  transform: translateY(-1px);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.015)
+  );
+}
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
+
+.activeLink {
+  color: var(--topbar-text) !important;
+
+  background: linear-gradient(
+    180deg,
+    var(--topbar-active-soft),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  border: 1px solid var(--topbar-active-border) !important;
+
+  box-shadow: 0 0 24px var(--topbar-active-glow);
+}
+
+.activeLink::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+
+  right: 18px;
+
+  bottom: 6px;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--topbar-active),
+    transparent
+  );
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.rightActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.themeToggle,
+.languageToggle {
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-radius: 16px;
+
+  border: 1px solid var(--topbar-border);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  color: var(--topbar-text);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.themeToggle:hover,
+.languageToggle:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--topbar-active-border);
+
+  background: linear-gradient(
+    180deg,
+    var(--topbar-active-soft),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+/* =========================================
+   LANGUAGE
+========================================= */
+
+.languageWrapper {
+  position: relative;
+
+  z-index: 200;
+}
+
+.languageDropdown {
+  position: absolute;
+
+  top: calc(100% + 12px);
+
+  right: 0;
+
+  width: 180px;
+
+  padding: 10px;
+
+  border-radius: 20px;
+
+  background: var(--topbar-bg);
+
+  border: 1px solid var(--topbar-border);
+
+  backdrop-filter: blur(24px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+
+  z-index: 300;
+}
+
+.languageOption {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 14px;
+
+  border-radius: 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--topbar-subtext);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.languageOption:hover {
+  background: var(--topbar-active-soft);
+
+  color: var(--topbar-text);
+
+  transform: translateX(2px);
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.topbarButton {
+  height: 52px;
+
+  padding: 0 22px;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: var(--topbar-cta-text);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  background: var(--topbar-cta);
+
+  border: 1px solid var(--topbar-active-border);
+
+  box-shadow: 0 0 28px var(--topbar-active-glow);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+.topbarButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 40px var(--topbar-active-glow);
+
+  filter: brightness(1.03);
+}
+/* =========================================
+   PROJECTS NAVBAR OVERRIDES
+========================================= */
+
+.activeLink {
+  color: var(--project-primary) !important;
+
+  background: linear-gradient(
+    180deg,
+    var(--project-soft),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  border: 1px solid var(--project-soft);
+
+  box-shadow: 0 0 18px var(--project-glow);
+}
+
+.navigation a:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  cursor: default !important;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.topbarButton {
+  background: linear-gradient(
+    135deg,
+    var(--project-primary),
+    color-mix(in srgb, var(--project-primary) 75%, white 18%)
+  ) !important;
+
+  box-shadow: 0 0 24px var(--project-glow);
+
+  color: #050816 !important;
+}
+
+.topbarButton:hover {
+  box-shadow: 0 0 42px var(--project-glow);
+}
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+[data-theme="light"] .activeLink {
+  color: var(--project-primary) !important;
+}
+
+[data-theme="light"] .navigation a {
+  color: rgba(17, 24, 39, 0.65);
+}
+
+[data-theme="light"] .navigation a:hover {
+  color: #111827;
+}
+
+[data-theme="light"] .topbarButton {
+  color: white !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .brandInfo {
+    display: none;
+  }
+
+  .navigation a {
+    min-width: auto;
+
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 980px) {
+  .topbarContainer {
+    height: auto;
+
+    padding: 18px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .navigation {
+    order: 3;
+
+    width: 100%;
+  }
+
+  .rightActions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    width: calc(100% - 20px);
+
+    top: 10px;
+  }
+
+  .navigation {
+    gap: 6px;
+
+    padding: 8px;
+  }
+
+  .navigation a {
+    height: 42px;
+
+    padding: 0 12px;
+
+    font-size: 0.82rem;
+  }
+
+  .topbarButton {
+    display: none;
+  }
+
+  .themeToggle,
+  .languageToggle {
+    height: 42px;
+  }
+}
