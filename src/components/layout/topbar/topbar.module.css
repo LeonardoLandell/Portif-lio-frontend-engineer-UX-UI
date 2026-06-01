@@ -644,55 +644,163 @@
   }
 }
 
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 980px) {
-  .topbarContainer {
-    height: auto;
-
-    padding: 18px;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-  }
-
-  .navigation {
-    order: 3;
-
-    width: 100%;
-  }
-
-  .rightActions {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 640px) {
   .topbar {
-    width: calc(100% - 20px);
+    top: 12px;
 
-    top: 10px;
+    width: calc(100% - 24px);
+
+    border-radius: 24px;
+  }
+
+  .topbarContainer {
+    height: 72px;
+
+    padding: 0 16px;
+
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+
+    gap: 12px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brandInfo {
+    display: none;
   }
 
   .navigation {
-    gap: 6px;
+    flex: 1;
 
-    padding: 8px;
+    width: auto;
+
+    order: unset;
+
+    gap: 4px;
+
+    padding: 6px;
   }
 
   .navigation a {
-    height: 42px;
+    min-width: auto;
 
-    padding: 0 12px;
+    height: 40px;
 
-    font-size: 0.82rem;
+    padding: 0 10px;
+
+    font-size: 0.78rem;
+  }
+
+  .rightActions {
+    gap: 8px;
+
+    margin-left: 0;
+  }
+
+  .themeToggle,
+  .languageToggle {
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    padding: 0;
   }
 
   .topbarButton {
     display: none;
   }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .topbar {
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    border-radius: 22px;
+  }
+
+  .topbarContainer {
+    height: 68px;
+
+    padding: 0 12px;
+
+    gap: 8px;
+  }
+
+  .logo {
+    width: 42px;
+
+    height: 42px;
+  }
+
+  .navigation {
+    padding: 4px;
+
+    gap: 2px;
+  }
+
+  .navigation a {
+    height: 38px;
+
+    padding: 0 8px;
+
+    min-width: auto;
+
+    font-size: 0.72rem;
+  }
 
   .themeToggle,
   .languageToggle {
-    height: 42px;
+    width: 38px;
+
+    height: 38px;
+
+    min-width: 38px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .navigation {
+    justify-content: center;
+  }
+
+  .navigation a {
+    padding: 0 6px;
+
+    font-size: 0.68rem;
+  }
+
+  .logo {
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .themeToggle,
+  .languageToggle {
+    width: 36px;
+
+    height: 36px;
+
+    min-width: 36px;
   }
 }

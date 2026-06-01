@@ -1108,3 +1108,107 @@
   --active-line: rgba(139, 92, 246, 0.9);
   --active-glow: rgba(139, 92, 246, 0.6);
 }
+/* =========================================
+   PROJECTS MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  /* PAGE */
+
+  .projectsPage {
+    padding-inline: 16px;
+  }
+
+  /* NAVBAR */
+
+  .topbarContainer {
+    padding: 14px 18px;
+    min-height: 72px;
+  }
+
+  .brandInfo {
+    display: none;
+  }
+
+  .navigation {
+    gap: 20px;
+  }
+
+  .navigation a {
+    font-size: 0.85rem;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 9vw, 4rem);
+    line-height: 0.95;
+    max-width: 100%;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* PROJECT CARD */
+
+  .project {
+    padding: 24px;
+    border-radius: 32px;
+  }
+
+  .projectBody {
+    gap: 24px;
+  }
+
+  /* BANNER */
+
+  .banner {
+    height: 220px;
+  }
+
+  .bannerImage {
+    object-position: top center;
+  }
+
+  /* TAGS */
+
+  .tags {
+    gap: 8px;
+  }
+
+  .tags span {
+    font-size: 0.75rem;
+  }
+
+  /* DOCUMENTATION */
+
+  .documentationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* BUTTONS */
+
+  .projectActions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .projectActions a,
+  .projectActions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* CAROUSEL */
+
+  .carouselControls {
+    margin-top: 32px;
+  }
+}

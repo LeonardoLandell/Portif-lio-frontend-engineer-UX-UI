@@ -17,6 +17,8 @@ type Theme = "light" | "dark";
 type ThemeContextType = {
   theme: Theme;
 
+  mounted: boolean;
+
   toggleTheme: () => void;
 };
 
@@ -31,6 +33,8 @@ type ThemeProviderProps = {
 const ThemeContext = createContext<ThemeContextType>({
   theme: "dark",
 
+  mounted: false,
+
   toggleTheme: () => {},
 });
 
@@ -39,21 +43,35 @@ const ThemeContext = createContext<ThemeContextType>({
 ========================================= */
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") {
-      return "dark";
-    }
+  /* =========================================
+     DEFAULT THEME
+  ========================================= */
 
+  const [theme, setTheme] = useState<Theme>("dark");
+
+  const [mounted, setMounted] = useState(false);
+
+  /* =========================================
+     INITIALIZE
+  ========================================= */
+
+  useEffect(() => {
     const savedTheme = localStorage.getItem("portfolio-theme") as Theme | null;
 
-    return savedTheme ?? "dark";
-  });
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+
+    setMounted(true);
+  }, []);
 
   /* =========================================
      APPLY THEME
   ========================================= */
 
   useEffect(() => {
+    if (!mounted) return;
+
     const root = document.documentElement;
 
     root.classList.remove("light", "dark");
@@ -61,7 +79,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     root.classList.add(theme);
 
     localStorage.setItem("portfolio-theme", theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   /* =========================================
      TOGGLE
@@ -75,6 +93,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     <ThemeContext.Provider
       value={{
         theme,
+        mounted,
         toggleTheme,
       }}
     >

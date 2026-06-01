@@ -370,45 +370,152 @@
 }
 
 /* =========================================
-   RESPONSIVE
+   TABLET
 ========================================= */
 
 @media (max-width: 1024px) {
+  .projectsPage {
+    padding: 180px 0 80px;
+  }
+
+  .hero {
+    margin-bottom: 80px;
+  }
+
   .projectBody {
     padding: 40px;
   }
 
   .banner {
-    height: 420px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 0 20px;
-  }
-
-  .project {
-    margin-bottom: 80px;
-  }
-
-  .banner {
-    height: 280px;
+    height: 380px;
   }
 
   .bannerContent {
-    left: 24px;
+    left: 32px;
+    bottom: 32px;
+  }
+}
 
-    right: 24px;
+/* =========================================
+   MOBILE
+========================================= */
 
-    bottom: 24px;
+@media (max-width: 768px) {
+  .projectsPage {
+    padding: 220px 0 60px;
+  }
+
+  .hero {
+    padding: 0 20px;
+
+    margin-bottom: 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 10vw, 4rem);
+
+    line-height: 0.95;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+  .project {
+    margin: 0 12px 60px;
+
+    border-radius: 24px;
+  }
+
+  .banner {
+    height: 220px;
+
+    border-radius: 24px;
+  }
+
+  .bannerOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(5, 7, 15, 0.15),
+      rgba(5, 7, 15, 0.92)
+    );
+  }
+
+  .bannerContent {
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 20px;
+  }
+
+  .bannerContent h2 {
+    font-size: 2.2rem;
+
+    margin-bottom: 10px;
+  }
+
+  .bannerContent p {
+    font-size: 0.9rem;
+
+    line-height: 1.6;
   }
 
   .projectBody {
-    padding: 28px;
+    padding: 24px;
+  }
+
+  .section + .section {
+    margin-top: 32px;
+  }
+
+  .tags {
+    gap: 8px;
+  }
+
+  .tags span {
+    padding: 8px 14px;
+
+    font-size: 0.8rem;
   }
 
   .documentationGrid {
     grid-template-columns: 1fr;
+  }
+
+  .documentationCard {
+    padding: 18px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .projectsPage {
+    padding-top: 240px;
+  }
+
+  .hero {
+    padding: 0 16px;
+  }
+
+  .project {
+    margin-inline: 8px;
+  }
+
+  .banner {
+    height: 200px;
+  }
+
+  .bannerContent h2 {
+    font-size: 1.9rem;
+  }
+
+  .projectBody {
+    padding: 20px;
   }
 }
