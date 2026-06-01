@@ -402,17 +402,17 @@
 
 @media (max-width: 768px) {
   .projectsPage {
-    padding: 220px 0 60px;
+    padding: 180px 0 60px;
   }
 
   .hero {
     padding: 0 20px;
 
-    margin-bottom: 60px;
+    margin-bottom: 48px;
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem, 10vw, 4rem);
+    font-size: clamp(2.2rem, 10vw, 3.4rem);
 
     line-height: 0.95;
   }
@@ -420,26 +420,42 @@
   .hero p {
     font-size: 0.95rem;
 
-    line-height: 1.8;
+    line-height: 1.7;
   }
 
   .project {
-    margin: 0 12px 60px;
+    width: 92%;
 
-    border-radius: 24px;
+    max-width: 92%;
+
+    margin: 0 auto 48px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
   }
 
   .banner {
-    height: 220px;
+    height: 180px;
 
-    border-radius: 24px;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .bannerImage {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
   }
 
   .bannerOverlay {
     background: linear-gradient(
       180deg,
-      rgba(5, 7, 15, 0.15),
-      rgba(5, 7, 15, 0.92)
+      rgba(5, 7, 15, 0.08),
+      rgba(5, 7, 15, 0.9)
     );
   }
 
@@ -451,16 +467,19 @@
     bottom: 20px;
   }
 
-  .bannerContent h2 {
-    font-size: 2.2rem;
-
-    margin-bottom: 10px;
+  .bannerContent span {
+    font-size: 0.72rem;
   }
 
-  .bannerContent p {
-    font-size: 0.9rem;
+  .bannerContent h2 {
+    font-size: 1.8rem;
 
-    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* A descrição já existe no body */
+  .bannerContent p {
+    display: none;
   }
 
   .projectBody {
@@ -468,7 +487,11 @@
   }
 
   .section + .section {
-    margin-top: 32px;
+    margin-top: 28px;
+  }
+
+  .section h3 {
+    margin-bottom: 14px;
   }
 
   .tags {
@@ -476,17 +499,21 @@
   }
 
   .tags span {
-    padding: 8px 14px;
+    padding: 8px 12px;
 
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .documentationGrid {
     grid-template-columns: 1fr;
+
+    gap: 14px;
   }
 
   .documentationCard {
     padding: 18px;
+
+    border-radius: 18px;
   }
 }
 
@@ -496,7 +523,7 @@
 
 @media (max-width: 480px) {
   .projectsPage {
-    padding-top: 240px;
+    padding-top: 170px;
   }
 
   .hero {
@@ -504,18 +531,50 @@
   }
 
   .project {
-    margin-inline: 8px;
+    width: 94%;
+
+    max-width: 94%;
   }
 
   .banner {
-    height: 200px;
+    height: 170px;
+  }
+
+  .bannerContent {
+    left: 16px;
+
+    right: 16px;
+
+    bottom: 16px;
   }
 
   .bannerContent h2 {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
 
   .projectBody {
     padding: 20px;
+  }
+
+  .section p {
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+  }
+}
+/* =========================================
+   SAFETY FIX
+========================================= */
+
+@media (max-width: 768px) {
+  .project,
+  .banner,
+  .projectBody,
+  .documentationGrid {
+    max-width: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
